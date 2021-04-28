@@ -36,3 +36,10 @@ function updateNavOnLogin() {
   $loginForm.hide();
   $signupForm.hide();
 }
+
+function navSubmitStory() {
+  console.log("we have a click")
+  $navSubmitStory.show();
+}
+
+$body.on('click', "#nav-submitStory", navSubmitStory)
