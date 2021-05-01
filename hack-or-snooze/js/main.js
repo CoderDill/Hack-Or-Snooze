@@ -6,11 +6,15 @@ const $body = $("body");
 
 const $storiesLoadingMsg = $("#stories-loading-msg");
 const $allStoriesList = $("#all-stories-list");
+const $myFavsList = $("#fav-stories-list");
+const $myStories = $("#my-stories-list");
 
 const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 
 const $navSubmitStory = $("#submitStory-form");
+const $navFavorites = $("#nav-favorites");
+const $navMyStories = $("#nav-myStories");
 const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");
 const $navLogOut = $("#nav-logout");

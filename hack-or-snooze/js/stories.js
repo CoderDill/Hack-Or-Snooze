@@ -21,10 +21,13 @@ async function getAndShowStoriesOnStart() {
 
 function generateStoryMarkup(story) {
   // console.debug("generateStoryMarkup", story);
-
+console.log(story)
   const hostName = story.getHostName();
   return $(`
       <li id="${story.storyId}">
+        <span class="star">
+        <i class="far fa-star"></i>
+        </span>
         <a href="${story.url}" target="a_blank" class="story-link">
           ${story.title}
         </a>
@@ -67,3 +70,22 @@ async function submitStory(e) {
 }
 
 $navSubmitStory.on("submit", submitStory);
+
+async function removeStory(e) {
+  e.preventDefault();
+  
+  await storyList.removeStory(currentUser, function (story) {
+    let storyId = story.storyId;
+    storyId.remove();
+  })
+}
+
+function putFavoritesOnPage() {
+  $myFavsList.empty();
+
+  for (let story of currentUser.favorites) {
+    const $story = generateStoryMarkup(story);
+    $myFavsList.append($story);
+  }
+  $myFavsList.show();
+}

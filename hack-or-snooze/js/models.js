@@ -24,7 +24,8 @@ class Story {
 
   getHostName() {
     // UNIMPLEMENTED: complete this function!
-    return "hostname.com";
+    console.log(new URL(this.url));
+    return new URL(this.url).host;
   }
 }
 
@@ -88,6 +89,18 @@ class StoryList {
     user.ownStories.unshift(story);
     return story;
   }
+  async removeStory(user, storyId) {
+    // UNIMPLEMENTED: complete this function!
+    let token = user.loginToken;
+    const response = await axios({
+      url: `${BASE_URL}/stories/${storyId}`,
+      method: "DELETE",
+      data: {
+        token: user.loginToken,
+      },
+    });
+  }
+
 }
 
 /******************************************************************************
@@ -199,5 +212,15 @@ class User {
       console.error("loginViaStoredCredentials failed", err);
       return null;
     }
+  }
+  async addFavorite(username, storyId) {
+    const token = this.loginToken;
+
+    const response = await axios({
+      url: `${BASE_URL}/users/${username}/favorites/${storyId}`,
+      method: "POST",
+      data: { token },
+    });
+  
   }
 }

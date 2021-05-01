@@ -43,3 +43,19 @@ function navSubmitStory() {
 }
 
 $body.on('click', "#nav-submitStory", navSubmitStory)
+
+function navMyFavorites() {
+  console.log("Clicky clicky");
+  hidePageComponents();
+  putFavoritesOnPage();
+}
+
+$body.on("click", "#nav-favorites", navMyFavorites)
+
+function navMyStories() {
+  console.log("Click click");
+  hidePageComponents();
+  
+}
+
+$body.on("click", "#nav-myStories", navMyStories)   
