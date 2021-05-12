@@ -8,6 +8,8 @@
 
 function navAllStories(evt) {
   console.debug("navAllStories", evt);
+  $submitStoryForm.hide();
+  $storiesLists.hide();
   hidePageComponents();
   putStoriesOnPage();
 }
@@ -38,24 +40,32 @@ function updateNavOnLogin() {
 }
 
 function navSubmitStory() {
-  console.log("we have a click")
-  $navSubmitStory.show();
+  console.log("we have a click");
+  $storiesLists.hide();
+  hidePageComponents();
+  $submitStoryForm.show();
 }
 
-$body.on('click', "#nav-submitStory", navSubmitStory)
+$body.on("click", "#nav-submitStory", navSubmitStory);
 
 function navMyFavorites() {
   console.log("Clicky clicky");
+
+  $submitStoryForm.hide();
+  $storiesLists.hide();
   hidePageComponents();
   putFavoritesOnPage();
+  $myFavsList.show();
 }
 
-$body.on("click", "#nav-favorites", navMyFavorites)
+$body.on("click", "#nav-favorites", navMyFavorites);
 
 function navMyStories() {
   console.log("Click click");
+  $submitStoryForm.hide();
+  $storiesLists.hide();
   hidePageComponents();
-  
+  putMyStoriesOnPage();
 }
 
-$body.on("click", "#nav-myStories", navMyStories)   
+$body.on("click", "#nav-myStories", navMyStories);

@@ -9,10 +9,16 @@ const $allStoriesList = $("#all-stories-list");
 const $myFavsList = $("#fav-stories-list");
 const $myStories = $("#my-stories-list");
 
+const $noFavs = $("h4")
+const $star = $(".star")
+
+const $storiesLists = $(".stories-list");
+const $section = $("stories-container container");
+
 const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 
-const $navSubmitStory = $("#submitStory-form");
+const $submitStoryForm = $("#submitStory-form");
 const $navFavorites = $("#nav-favorites");
 const $navMyStories = $("#nav-myStories");
 const $navLogin = $("#nav-login");
