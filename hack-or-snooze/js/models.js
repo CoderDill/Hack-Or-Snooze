@@ -225,7 +225,7 @@ class User {
     }
   }
 
-  async addFavorite(username, storyId) {
+  async toggleFavorite(username, storyId) {
     const token = this.loginToken;
 
     await axios({
@@ -233,6 +233,6 @@ class User {
       method: "POST",
       data: { token },
     });
-    
+    this.favorites 
   }
 }
